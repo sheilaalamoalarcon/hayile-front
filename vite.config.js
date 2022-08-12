@@ -1,4 +1,4 @@
-import path from "path";
+const path = require('path');
 const isGitHubPages = true;
 const folderName = path.basename(process.cwd()) + "/";
 const mode = process.env.NODE_ENV === "production" ? "production" : "development";
