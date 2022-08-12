@@ -11,5 +11,4 @@ router.get('/', function (req, res) {
 
 
 app.use('/', router);
-var port_number = server.listen(process.env.PORT || 3000);
-app.listen(port_number);
+app.listen(process.env.PORT || 3000, () => console.log('Running.'))
