@@ -1,8 +1,14 @@
-import express from 'express';
+import express, { Router } from 'express';
+const app = express();
+import { join } from 'path';
+const router = Router();
 
-const app = express()
-
-app.get('/', function (req, res) {
-    res.sendFile('.\src\index.html');
+router.get('/', function (req, res) {
+    res.sendFile(join(__dirname + '/src/index.html'));
 });
-app.listen(process.env.PORT || 5000), () => console.log('Server working.')
+
+
+
+
+app.use('/', router);
+app.listen(process.env.port || 3000);
