@@ -1,16 +1,13 @@
-import express, { Router } from 'express';
-const app = express();
-const router = Router();
+const express = require('express');
+const app = express(); // create a router.get method to resolve index.html 
+const path = require('path');
 
-router.get('/', function (req, res) {
-    res.sendFile(__dirname + '/index.html');
-});
-
-router.get('/index.html', function (req, res) {
-    res.sendFile(__dirname + '/index.html');
-});
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+}).listen(process.env.PORT || 3000, () => {
+    console.log('Server is running on port 3000');
+}).use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', router);
-app.listen(process.env.PORT || 3000, () => console.log('Running.'))
 
 
