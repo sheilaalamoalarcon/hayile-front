@@ -2,6 +2,7 @@ import express from 'express';
 
 const app = express()
 
-app.get('/', (req, res) => res.send('Hello World'))
-
+app.get('/', function (req, res) {
+    res.sendFile('./src/index.html');
+});
 app.listen(process.env.PORT || 5000), () => console.log('Server working.')
