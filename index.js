@@ -4,9 +4,11 @@ const path = require('path');
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
-}).listen(process.env.PORT || 3000, () => {
+})
+
+app.listen(process.env || 3000, () => {    // listen to port 3000  
     console.log('Server is running on port 3000');
-}).use(express.static(path.join(__dirname, 'public')));
+});
 
 app.use('/', router);
 
