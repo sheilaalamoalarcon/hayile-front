@@ -6,10 +6,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 })
 
-app.listen(process.env || 3000, () => {    // listen to port 3000  
-    console.log('Server is running on port 3000');
-});
-
+app.listen(process.env.PORT || 3000, () => console.log('Running.'))
 app.use('/', router);
 
 
