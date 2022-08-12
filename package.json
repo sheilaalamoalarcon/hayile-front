@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "index.js",
+    "start": "node index.js",
     "dev": "vite",
     "build": "rm -rf dist && vite build",
     "preview": "vite preview",
@@ -32,7 +32,6 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-    "fs": "^0.0.1-security",
-    "http": "^0.0.1-security"
+    "express": "^4.18.1"
   }
 }
