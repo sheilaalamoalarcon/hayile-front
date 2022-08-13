@@ -25,14 +25,16 @@ h1 {
 .topbar {
   position: sticky;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: var(--mobile-padding);
   background-color: rgb(208 93 93 / 52.9%);
+  flex-direction: row;
 }
 
 .topbar__burger img {
   color: black;
+  display: none;
 }
 
 .content {
@@ -47,17 +49,26 @@ h1 {
 }
 
 .shortcuts__OS-button {
-  border: 0.1rem solid black;
   padding: 0.4rem 1rem;
-  border-radius: 2rem;
+  height: 30px;
+  background: rgba(0,0,0,10%);
+  width: 50px;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -5px 5px 10px 0px rgb(0 0 0 / 24%);
 }
 
 .shortcuts__container {
   padding: calc(var(--mobile-padding) / 2);
   display: flex;
   flex-direction: column;
-  border: 0.1rem solid black;
   border-radius: 0.5rem;
+  box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 24%);
 }
 
 .shortcuts__list {
@@ -69,7 +80,6 @@ h1 {
 
 .shortcuts__searcher {
   width: 100%;
-  border: 0.1rem solid black;
   border-radius: 0.5rem;
   background: white;
   display: flex;
@@ -77,6 +87,7 @@ h1 {
   margin: 0.5rem 0;
   position: sticky;
   top: 0;
+  box-shadow: -5px 5px 10px 0px rgb(0 0 0 / 24%);
 }
 
 .shortcuts__searcher input {
