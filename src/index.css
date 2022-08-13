@@ -72,8 +72,7 @@ h1 {
 }
 
 .shortcuts__list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   overflow-y: auto;
   height: 70vh;
 }
@@ -110,3 +109,19 @@ h1 {
 .shortcuts__list li {
   margin-left: 1rem;
 }
+.shortcuts__total {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+h2 {
+  margin: 20px;
+  text-align:center;
+  background-color: rgba(0,0,0,10%);
+  /* -webkit-box-shadow: 0px 11px 15px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 11px 15px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 11px 15px 0px rgba(0,0,0,0.2); */
+  padding: 10px;
+  color: white;
+}
+
