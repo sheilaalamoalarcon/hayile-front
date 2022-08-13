@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express(); // create a router.get method to resolve index.html 
+const app = express();
 const path = require('path');
 
 app.get('/', (req, res) => {
