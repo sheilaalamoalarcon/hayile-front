@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="./index.css">
   <script type="module" src="../index.js"></script>
   <script src="./main.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,13 +22,17 @@
     </div>
   </nav>
   <div class="content">
-    <section class="sidebar desktop">
+    <section class="sidebar__desktop">
+      <div class="sidebar__box">
+        <img src="assets/icons/logo vscode.svg" alt="logo visualStudioCode" class="sidebar__box--logo">
+      </div>
     </section>
     <section class="shortcuts">
       <main class="shortcuts__title">
         <h1>VSCode</h1>
         <div class="shortcuts__OS-button">
-          <p>Windows</p>
+          <img class="shortcuts__OS-button--img" src="assets/img/logo windows.png" alt="logo windows">
+          <!-- <p>Windows</p> -->
         </div>
       </main>
       <div class="shortcuts__container">

@@ -19,20 +19,24 @@ body {
 
 h1 {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 400;
+  font-family: 'Zen Dots', cursive;
 }
 
 .topbar {
   position: sticky;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: var(--mobile-padding);
-  background-color: rgb(208 93 93 / 52.9%);
+  background-color: rgb(200 125 206 / 53%);
+  flex-direction: row;
+  background: linear-gradient(180deg, #cd75e1, transparent);
 }
 
 .topbar__burger img {
   color: black;
+  display: none;
 }
 
 .content {
@@ -42,22 +46,31 @@ h1 {
 .shortcuts__title {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-bottom: 1rem;
 }
 
 .shortcuts__OS-button {
-  border: 0.1rem solid black;
   padding: 0.4rem 1rem;
-  border-radius: 2rem;
+  height: 30px;
+  background: rgb(219 126 222 / 57%);
+  width: 50px;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -5px 5px 10px 0px rgb(0 0 0 / 24%);
 }
 
 .shortcuts__container {
   padding: calc(var(--mobile-padding) / 2);
   display: flex;
   flex-direction: column;
-  border: 0.1rem solid black;
   border-radius: 0.5rem;
+  box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 24%);
 }
 
 .shortcuts__list {
@@ -69,7 +82,6 @@ h1 {
 
 .shortcuts__searcher {
   width: 100%;
-  border: 0.1rem solid black;
   border-radius: 0.5rem;
   background: white;
   display: flex;
@@ -77,6 +89,7 @@ h1 {
   margin: 0.5rem 0;
   position: sticky;
   top: 0;
+  box-shadow: -5px 5px 10px 0px rgb(0 0 0 / 24%);
 }
 
 .shortcuts__searcher input {
@@ -91,11 +104,58 @@ h1 {
 }
 
 .shortcuts__list h2 {
-  margin-bottom: 0.3rem;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 500;
+  font-family: 'Zen Dots', cursive;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .shortcuts__list li {
-  margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 8px;
+}
+.shortcuts__list li p:nth-child(even){
+  font-weight: 600;
+  color: grey;
+}
+.shortcuts__list li p{
+  padding: 5px;
+}
+
+li:nth-child(even) {
+  background: rgb(186 161 192 / 33%);
+  border-radius: 6px;  
+}
+
+.sidebar__desktop{
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .sidebar__desktop {
+    display: flex;
+    padding: calc(var(--mobile-padding) / 2);
+    flex-direction: column;
+    border-radius: 0.5rem;
+    box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 24%);
+    margin-right: 50px;
+    margin-left: 20px;
+    margin-top: 45px;
+  }
+  .content{
+    display: grid;
+    grid-template-areas: "sidebar shortcuts";
+    grid-template-columns: 20% 80%;
+  }
+  .shortcuts__container {
+    margin-right: 20px;
+  }
+  /* .sidebar__box--logo{
+
+  } */
 }
