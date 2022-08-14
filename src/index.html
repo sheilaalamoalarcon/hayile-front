@@ -8,6 +8,7 @@
   <title>Hayile - Shortcuts</title>
   <link rel="stylesheet" href="./index.css">
   <script type="module" src="../index.js"></script>
+  <script src="./main.js" defer></script>
 </head>
 
 <body>
@@ -29,11 +30,11 @@
       </main>
       <div class="shortcuts__container">
         <div class="shortcuts__searcher">
-          <input type="text" placeholder="Buscar...">
+          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar...">
           <img src="./assets/icons/search.svg" alt="Search" width="20px">
         </div>
         <div class="shortcuts__list">
-          <ul>
+          <ul class="myUl">
             <h2>General</h2>
             <li>
               <p> Show Command Palette</p><p>Ctrl + Shift + P or F1 </p>
@@ -54,7 +55,7 @@
               <p>Keyboard Shortcuts</p><p>Ctrl + K Ctrl + S </p>
             </li>
           </ul>
-          <ul>
+          <ul class="myUl">
             <h2>Basic editing</h2>
             <li>
               <p>Cut line (empty selection)</p><p>Ctrl + X </p>
@@ -132,7 +133,7 @@
               <p>Toggle word wrap</p><p>Alt + Z </p>
             </li>
           </ul>
-          <ul>
+          <ul class="myUl">
             <h2>Navigation</h2>
             <li>
               <p>Show all Symbols</p><p>Ctrl + T </p>
@@ -165,7 +166,7 @@
               <p>Toggle Tab moves focus</p><p>Ctrl+M </p>
             </li>
           </ul>
-          <ul>
+          <ul class="myUl">
             <h2>Search and replace</h2>
             <li>
               <p>Find</p><p>Ctrl + F </p>
@@ -189,7 +190,7 @@
               <p>Toggle case-sensitive / regex / whole word</p><p>Alt + C / R / W </p>
             </li>
           </ul>
-          <ul>
+          <ul class="myUl">
             <h2>Multi-cursor and selection</h2>
             <li>
               <p>Insert cursor</p><p>Alt + Click </p>
@@ -227,7 +228,7 @@
               <p>Ctrl+Shift+Alt + PgUp/PgDn</p>
             </li>
           </ul>
-          <ul>
+          <ul class="myUl">
             <h2>Rich languages editing</h2>
             <li>
               <p>Trigger suggestion</p><p>Ctrl + Space, Ctrl + I </p>
@@ -266,7 +267,7 @@
               <p>Change file language</p><p>Ctrl + K  M </p>
             </li>
           </ul>
-          <ul>
+          <ul class="myUl">
             <h2>Editor management</h2>
             <li>
               <p>Close editor</p><p>Ctrl + F4, Ctrl + W </p>
@@ -290,7 +291,7 @@
               <p>Move active editor group</p><p>Ctrl + K ← / → </p>
             </li>
           </ul>
-          <ul>
+          <ul class="myUl">
             <h2>File management</h2>
             <li>
               <p>New File</p><p>Ctrl + N </p>
@@ -335,7 +336,7 @@
               <p>Show active file in new window/instance</p><p>Ctrl + K O </p>
             </li>
           </ul>
-          <ul>
+          <ul class="myUl">
             <h2>Display</h2>
             <li>
               <p>Toggle full screen</p><p>F11 </p>
@@ -383,7 +384,7 @@
               <p>Zen Mode (Esc Esc to exit)</p><p>Ctrl + K Z </p>
             </li>
           </ul>
-          <ul>
+          <ul class="myUl">
             <h2>Debug</h2>
             <li>
               <p>Toggle breakpoint</p><p>F9 </p>
@@ -404,7 +405,7 @@
               <p>Show hover</p><p>Ctrl + K Ctrl + I </p>
             </li>
           </ul>
-          <ul>
+          <ul class="myUl">
             <h2>Integrated terminal</h2>
             <li>
               <p>Show integrated terminal</p><p>Ctrl + ` </p>
