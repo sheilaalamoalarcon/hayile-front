@@ -20,7 +20,7 @@ body {
 h1 {
   font-size: 1.5rem;
   font-weight: 400;
-  font-family: 'Zen Dots', cursive;
+  font-family: "Zen Dots", cursive;
 }
 
 .topbar {
@@ -62,7 +62,7 @@ h1 {
   align-content: center;
   justify-content: center;
   align-items: center;
-  box-shadow: -5px 5px 10px 0px rgb(0 0 0 / 24%);
+  box-shadow: -5px 5px 10px 0 rgb(0 0 0 / 24%);
 }
 
 .shortcuts__container {
@@ -70,10 +70,10 @@ h1 {
   display: flex;
   flex-direction: column;
   border-radius: 0.5rem;
-  box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 24%);
+  box-shadow: 0 5px 10px 0 rgb(0 0 0 / 24%);
 }
 
-.shortcuts__list {
+.shortcuts__file {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -89,50 +89,52 @@ h1 {
   margin: 0.5rem 0;
   position: sticky;
   top: 0;
-  box-shadow: -5px 5px 10px 0px rgb(0 0 0 / 24%);
+  box-shadow: -5px 5px 10px 0 rgb(0 0 0 / 24%);
 }
 
-.shortcuts__searcher input {
+#input-search {
   width: 100%;
   border: none;
   outline: none;
 }
 
-.shortcuts__list ul {
+.file__section {
   margin-top: 1rem;
   padding-left: calc(var(--mobile-font-size) / 2);
 }
 
-.shortcuts__list h2 {
+.file__section h2 {
   font-size: 1.3rem;
   font-weight: 500;
-  font-family: 'Zen Dots', cursive;
+  font-family: "Zen Dots", cursive;
   margin: 0 auto;
   text-align: center;
   margin-bottom: 10px;
 }
 
-.shortcuts__list li {
+.file__section li {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 8px;
 }
-.shortcuts__list li p:nth-child(even){
+
+.file__section li p:nth-child(even) {
   font-weight: 600;
   color: grey;
 }
-.shortcuts__list li p{
+
+.file__section li p {
   padding: 5px;
 }
 
 li:nth-child(even) {
   background: rgb(186 161 192 / 33%);
-  border-radius: 6px;  
+  border-radius: 6px;
 }
 
-.sidebar__desktop{
+.sidebar__desktop {
   display: none;
 }
 
@@ -142,19 +144,22 @@ li:nth-child(even) {
     padding: calc(var(--mobile-padding) / 2);
     flex-direction: column;
     border-radius: 0.5rem;
-    box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 24%);
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 24%);
     margin-right: 50px;
     margin-left: 20px;
     margin-top: 45px;
   }
-  .content{
+
+  .content {
     display: grid;
     grid-template-areas: "sidebar shortcuts";
     grid-template-columns: 20% 80%;
   }
+
   .shortcuts__container {
     margin-right: 20px;
   }
+
   /* .sidebar__box--logo{
 
   } */
