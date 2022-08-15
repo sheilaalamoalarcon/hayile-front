@@ -14,5 +14,3 @@ app.get("/src/css", (req, res) => {
 app.listen(process.env.PORT || 3000, () => console.log("Running."));
 
 app.use(express.static(__dirname + "/src"));
-
-// Filtrar lo que escribes en el input con map
