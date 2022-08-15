@@ -1,17 +1,564 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="description" content="Website where you can find your shortcuts">
+  <title>Hayile - Shortcuts</title>
   
-  
-  <script type="module" crossorigin src="/hayile-front/index.579af7ac.js"></script>
+  <script src="./main.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/hayile-front/index.bb198fe1.css">
 </head>
+
 <body>
-
-  <h1>Hola Mundo esto es Hayile</h1>
-
+  <nav class="topbar">
+    <img src="data:image/png;base64,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" alt="Hayile logo" width="100px">
+    <div class="topbar__burger">
+      <img src="/hayile-front/burger.20a1cf07.svg" alt="Menu" width="30px">
+    </div>
+  </nav>
+  <div class="content">
+    <section class="sidebar__desktop">
+      <div class="sidebar__box">
+        <img src="/hayile-front/logo vscode.148dde89.svg" alt="logo visualStudioCode" class="sidebar__box--logo">
+      </div>
+    </section>
+    <section class="shortcuts">
+      <main class="shortcuts__title">
+        <h1>VSCode</h1>
+        <div class="shortcuts__OS-button">
+          <img class="shortcuts__OS-button--img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACbSURBVHgB3VPtCYUwDEweDtAR3OA5QjcRN3ADV3AD3cSO4ghuEC+QIoLVoj8ED0JCc72WfDDdgIiUcJXGnEH2Rv6b18vO0qEAwdlhJMU4MHMD38F86oEC1sNquokfPcT7AmxVLg9yM4oYTvKKJecH7iS3aJ9HOcagDPhJ0pg+0AWdxBY20jbnceazkLtMnvZ7EhEuBRKiKqLtdSsyn11xOweKtwAAAABJRU5ErkJggg==" alt="logo windows">
+          <!-- <p>Windows</p> -->
+        </div>
+      </main>
+      <div class="shortcuts__container">
+        <div class="shortcuts__searcher">
+          <input type="text" id="input-search" placeholder="Buscar...">
+          <img src="/hayile-front/search.0186fd85.svg" alt="Search" width="20px">
+        </div>
+        <div class="shortcuts__file">
+          <ul class="file__section">
+            <h2>General</h2>
+            <li>
+              <p> Show Command Palette</p>
+              <p>Ctrl + Shift + P or F1 </p>
+            </li>
+            <li>
+              <p>Quick Open, Go to File…</p>
+              <p>Ctrl + P </p>
+            </li>
+            <li>
+              <p>New window/instance</p>
+              <p>Ctrl + Shift + N </p>
+            </li>
+            <li>
+              <p>Close window/instance</p>
+              <p>Ctrl + Shift + W </p>
+            </li>
+            <li>
+              <p>User Settings</p>
+              <p>Ctrl + , </p>
+            </li>
+            <li>
+              <p>Keyboard Shortcuts</p>
+              <p>Ctrl + K Ctrl + S </p>
+            </li>
+          </ul>
+          <ul class="file__section">
+            <h2>Basic editing</h2>
+            <li>
+              <p>Cut line (empty selection)</p>
+              <p>Ctrl + X </p>
+            </li>
+            <li>
+              <p>Copy line (empty selection)</p>
+              <p>Ctrl + C </p>
+            </li>
+            <li>
+              <p>Move line up/down</p>
+              <p>Alt + ↑ / ↓ </p>
+            </li>
+            <li>
+              <p>Copy line up/down</p>
+              <p>Shift + Alt + ↓ / ↑ </p>
+            </li>
+            <li>
+              <p>Delete line</p>
+              <p>Ctrl + Shift + K </p>
+            </li>
+            <li>
+              <p>Insert line below</p>
+              <p>Ctrl + Enter </p>
+            </li>
+            <li>
+              <p>Insert line above</p>
+              <p>Ctrl + Shift + Enter </p>
+            </li>
+            <li>
+              <p>Jump to matching bracket</p>
+              <p>Ctrl + Shift + \ </p>
+            </li>
+            <li>
+              <p>Indent/outdent line</p>
+              <p>Ctrl + ] / [ </p>
+            </li>
+            <li>
+              <p>Go to beginning/end of line</p>
+              <p>Home / End </p>
+            </li>
+            <li>
+              <p>Go to beginning of file</p>
+              <p>Ctrl + Home </p>
+            </li>
+            <li>
+              <p>Go to end of file</p>
+              <p>Ctrl + End </p>
+            </li>
+            <li>
+              <p> Scroll line up/down</p>
+              <p>Ctrl + ↑ / ↓ </p>
+            </li>
+            <li>
+              <p>Scroll page up/down</p>
+              <p>Alt + PgUp / PgDn </p>
+            </li>
+            <li>
+              <p>Fold (collapse) region</p>
+              <p>Ctrl + Shift + [ </p>
+            </li>
+            <li>
+              <p>Unfold (uncollapse) region</p>
+              <p>Ctrl + Shift + ] </p>
+            </li>
+            <li>
+              <p>Fold (collapse) all subregions</p>
+              <p>Ctrl + K Ctrl + [ </p>
+            </li>
+            <li>
+              <p>Unfold (uncollapse) all subregions</p>
+              <p>Ctrl + K Ctrl + ] </p>
+            </li>
+            <li>
+              <p>Fold (collapse) all regions</p>
+              <p>Ctrl + K Ctrl + 0 </p>
+            </li>
+            <li>
+              <p>Unfold (uncollapse) all regions</p>
+              <p>Ctrl + K Ctrl + J </p>
+            </li>
+            <li>
+              <p>Add line comment</p>
+              <p>Ctrl + K Ctrl + C </p>
+            </li>
+            <li>
+              <p>Remove line comment</p>
+              <p>Ctrl + K Ctrl + U </p>
+            </li>
+            <li>
+              <p>Toggle line comment</p>
+              <p>Ctrl + / </p>
+            </li>
+            <li>
+              <p>Toggle block comment</p>
+              <p>Shift + Alt + A </p>
+            </li>
+            <li>
+              <p>Toggle word wrap</p>
+              <p>Alt + Z </p>
+            </li>
+          </ul>
+          <ul class="file__section">
+            <h2>Navigation</h2>
+            <li>
+              <p>Show all Symbols</p>
+              <p>Ctrl + T </p>
+            </li>
+            <li>
+              <p>Go to Line...</p>
+              <p>Ctrl + G </p>
+            </li>
+            <li>
+              <p>Go to File...</p>
+              <p>Ctrl + P </p>
+            </li>
+            <li>
+              <p>Go to Symbol...</p>
+              <p>Ctrl + Shift + O </p>
+            </li>
+            <li>
+              <p>Show Problems panel</p>
+              <p>Ctrl + Shift + M </p>
+            </li>
+            <li>
+              <p>Go to next error or warning</p>
+              <p>F8 </p>
+            </li>
+            <li>
+              <p>Go to previous error or warning</p>
+              <p>Shift + F8 </p>
+            </li>
+            <li>
+              <p>Navigate editor group history</p>
+              <p>Ctrl + Shift + Tab </p>
+            </li>
+            <li>
+              <p>Go back / forward</p>
+              <p>Alt + ← / → </p>
+            </li>
+            <li>
+              <p>Toggle Tab moves focus</p>
+              <p>Ctrl+M </p>
+            </li>
+          </ul>
+          <ul class="file__section">
+            <h2>Search and replace</h2>
+            <li>
+              <p>Find</p>
+              <p>Ctrl + F </p>
+            </li>
+            <li>
+              <p>Replace</p>
+              <p>Ctrl + H </p>
+            </li>
+            <li>
+              <p>Find next/previous</p>
+              <p>F3 / Shift + F3 </p>
+            </li>
+            <li>
+              <p>Select all occurences of Find match</p>
+              <p>Alt + Enter </p>
+            </li>
+            <li>
+              <p>Add selection to next Find match</p>
+              <p>Ctrl + D </p>
+            </li>
+            <li>
+              <p>Move last selection to next Find match</p>
+              <p>Ctrl + K Ctrl + D </p>
+            </li>
+            <li>
+              <p>Toggle case-sensitive / regex / whole word</p>
+              <p>Alt + C / R / W </p>
+            </li>
+          </ul>
+          <ul class="file__section">
+            <h2>Multi-cursor and selection</h2>
+            <li>
+              <p>Insert cursor</p>
+              <p>Alt + Click </p>
+            </li>
+            <li>
+              <p>Insert cursor above / below</p>
+              <p>Ctrl + Alt + ↑ / ↓ </p>
+            </li>
+            <li>
+              <p>Undo last cursor operation</p>
+              <p>Ctrl + U </p>
+            </li>
+            <li>
+              <p>Insert cursor at end of each line selected</p>
+              <p>Shift + Alt + I </p>
+            </li>
+            <li>
+              <p>Select current line</p>
+              <p>Ctrl + L </p>
+            </li>
+            <li>
+              <p>Select all occurrences of current selection</p>
+              <p>Ctrl + Shift + L </p>
+            </li>
+            <li>
+              <p>Select all occurrences of current word</p>
+              <p>Ctrl + F2 </p>
+            </li>
+            <li>
+              <p>Expand selection</p>
+              <p>Shift + Alt + → </p>
+            </li>
+            <li>
+              <p>Shrink selection</p>
+              <p>Shift + Alt + ← </p>
+            </li>
+            <li>
+              <p>Column (page) selection</p>
+              <p>Ctrl+Shift+Alt + (arrow key)</p>
+            </li>
+            <li>
+              <p>Column (page) selection page up/down</p>
+              <p>Ctrl+Shift+Alt + PgUp/PgDn</p>
+            </li>
+          </ul>
+          <ul class="file__section">
+            <h2>Rich languages editing</h2>
+            <li>
+              <p>Trigger suggestion</p>
+              <p>Ctrl + Space, Ctrl + I </p>
+            </li>
+            <li>
+              <p>Trigger parameter hints</p>
+              <p>Ctrl + Shift + Space </p>
+            </li>
+            <li>
+              <p>Format document</p>
+              <p>Shift + Alt + F </p>
+            </li>
+            <li>
+              <p>Format selection</p>
+              <p>Ctrl + K Ctrl + F </p>
+            </li>
+            <li>
+              <p>Go to Definition</p>
+              <p>F12 </p>
+            </li>
+            <li>
+              <p>Peek Definition</p>
+              <p>Alt + F12 </p>
+            </li>
+            <li>
+              <p>Open Definition to the side</p>
+              <p>Ctrl + K or F12 </p>
+            </li>
+            <li>
+              <p>Quick Fix</p>
+              <p>Ctrl + . </p>
+            </li>
+            <li>
+              <p>Show References</p>
+              <p>Shift + F12 </p>
+            </li>
+            <li>
+              <p>Rename Symbol</p>
+              <p>F2 </p>
+            </li>
+            <li>
+              <p>Trim trailing whitespace</p>
+              <p>Ctrl + K or Ctrl + X </p>
+            </li>
+            <li>
+              <p>Change file language</p>
+              <p>Ctrl + K M </p>
+            </li>
+          </ul>
+          <ul class="file__section">
+            <h2>Editor management</h2>
+            <li>
+              <p>Close editor</p>
+              <p>Ctrl + F4, Ctrl + W </p>
+            </li>
+            <li>
+              <p>Close folder</p>
+              <p>Ctrl + K F </p>
+            </li>
+            <li>
+              <p>Split editor</p>
+              <p>Ctrl + \ </p>
+            </li>
+            <li>
+              <p>Focus into 1 st, 2nd or 3rd editor group</p>
+              <p>Ctrl + 1 / 2 / 3 </p>
+            </li>
+            <li>
+              <p>Focus into previous/next editor group</p>
+              <p>Ctrl + K Ctrl + ←/→ </p>
+            </li>
+            <li>
+              <p>Move editor left/right</p>
+              <p>Ctrl + Shift+PgUp / PgDn </p>
+            </li>
+            <li>
+              <p>Move active editor group</p>
+              <p>Ctrl + K ← / → </p>
+            </li>
+          </ul>
+          <ul class="file__section">
+            <h2>File management</h2>
+            <li>
+              <p>New File</p>
+              <p>Ctrl + N </p>
+            </li>
+            <li>
+              <p>Open File...</p>
+              <p>Ctrl + O </p>
+            </li>
+            <li>
+              <p>Save</p>
+              <p>Ctrl + S </p>
+            </li>
+            <li>
+              <p>Save As...</p>
+              <p>Ctrl + Shift + S </p>
+            </li>
+            <li>
+              <p>Save All</p>
+              <p>Ctrl + K S </p>
+            </li>
+            <li>
+              <p>Close</p>
+              <p>Ctrl + F4 </p>
+            </li>
+            <li>
+              <p>Close All</p>
+              <p>Ctrl + K Ctrl + W </p>
+            </li>
+            <li>
+              <p>Reopen closed editor</p>
+              <p>Ctrl + Shift + T </p>
+            </li>
+            <li>
+              <p>Keep preview mode editor open</p>
+              <p>Ctrl + K Enter </p>
+            </li>
+            <li>
+              <p>Open next</p>
+              <p>Ctrl + Tab </p>
+            </li>
+            <li>
+              <p>Open previous</p>
+              <p>Ctrl + Shift + Tab </p>
+            </li>
+            <li>
+              <p>Copy path of active file</p>
+              <p>Ctrl + K P </p>
+            </li>
+            <li>
+              <p>Reveal active file in Explorer</p>
+              <p>Ctrl + K R </p>
+            </li>
+            <li>
+              <p>Show active file in new window/instance</p>
+              <p>Ctrl + K O </p>
+            </li>
+          </ul>
+          <ul class="file__section">
+            <h2>Display</h2>
+            <li>
+              <p>Toggle full screen</p>
+              <p>F11 </p>
+            </li>
+            <li>
+              <p>Toggle editor layout (horizontal/vertical)</p>
+              <p>Shift + Alt + 0 </p>
+            </li>
+            <li>
+              <p>Zoom in/out</p>
+              <p>Ctrl+ = / - </p>
+            </li>
+            <li>
+              <p>Toggle Sidebar visibility</p>
+              <p>Ctrl + B </p>
+            </li>
+            <li>
+              <p>Show Explorer / Toggle focus</p>
+              <p>Ctrl + Shift + E </p>
+            </li>
+            <li>
+              <p>Show Search</p>
+              <p>Ctrl + Shift + F </p>
+            </li>
+            <li>
+              <p>Show Source Control</p>
+              <p>Ctrl + Shift + G </p>
+            </li>
+            <li>
+              <p>Show Debug</p>
+              <p>Ctrl + Shift + D </p>
+            </li>
+            <li>
+              <p>Show Extensions</p>
+              <p>Ctrl + Shift + X </p>
+            </li>
+            <li>
+              <p>Replace in files</p>
+              <p>Ctrl + Shift + H </p>
+            </li>
+            <li>
+              <p>Toggle Search details</p>
+              <p>Ctrl + Shift + J </p>
+            </li>
+            <li>
+              <p>Show Output panel</p>
+              <p>Ctrl + Shift + U </p>
+            </li>
+            <li>
+              <p>Open Markdown preview</p>
+              <p>Ctrl + Shift + V </p>
+            </li>
+            <li>
+              <p>Open Markdown preview to the side</p>
+              <p>Ctrl + K V </p>
+            </li>
+            <li>
+              <p>Zen Mode (Esc Esc to exit)</p>
+              <p>Ctrl + K Z </p>
+            </li>
+          </ul>
+          <ul class="file__section">
+            <h2>Debug</h2>
+            <li>
+              <p>Toggle breakpoint</p>
+              <p>F9 </p>
+            </li>
+            <li>
+              <p>Start/Continue</p>
+              <p>F5 </p>
+            </li>
+            <li>
+              <p>Stop</p>
+              <p>Shift + F5 </p>
+            </li>
+            <li>
+              <p>Step into/out</p>
+              <p>F11 / Shift + F11 </p>
+            </li>
+            <li>
+              <p>Step over</p>
+              <p>F10 </p>
+            </li>
+            <li>
+              <p>Show hover</p>
+              <p>Ctrl + K Ctrl + I </p>
+            </li>
+          </ul>
+          <ul class="file__section">
+            <h2>Integrated terminal</h2>
+            <li>
+              <p>Show integrated terminal</p>
+              <p>Ctrl + ` </p>
+            </li>
+            <li>
+              <p>Create new terminal</p>
+              <p>Ctrl + Shift + ` </p>
+            </li>
+            <li>
+              <p>Copy selection</p>
+              <p>Ctrl + C </p>
+            </li>
+            <li>
+              <p>Paste into active terminal</p>
+              <p>Ctrl + V </p>
+            </li>
+            <li>
+              <p>Scroll up/down</p>
+              <p>Ctrl + ↑ / ↓ </p>
+            </li>
+            <li>
+              <p>Scroll page up/down</p>
+              <p>Shift + PgUp / PgDn </p>
+            </li>
+            <li>
+              <p>Scroll to top/bottom</p>
+              <p>Ctrl + Home / End </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
+
 </html>
