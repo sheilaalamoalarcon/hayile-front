@@ -1,11 +1,11 @@
 /* eslint-disable indent */
 const inputSearcher = document.getElementById("input-search");
-const ulSections = document.getElementsByClassName("file__section");
+const arrayUlSections = document.getElementsByClassName("file__section");
 
 const searchShortcuts = () => {
     const typedWords = inputSearcher.value.toLowerCase();
-    for (let i = 0; i < ulSections.length; i++) {
-        const ulSection = ulSections[i];
+    for (let i = 0; i < arrayUlSections.length; i++) {
+        const ulSection = arrayUlSections[i];
         const li = ulSection.getElementsByTagName("li");
         for (let j = 0; j < li.length; j++) {
             const p = li[j].getElementsByTagName("p")[0];
@@ -19,8 +19,8 @@ const searchShortcuts = () => {
     hideEmptySections();
 };
 const hideEmptySections = () => {
-    for (let i = 0; i < ulSections.length; i++) {
-        const ulSection = ulSections[i];
+    for (let i = 0; i < arrayUlSections.length; i++) {
+        const ulSection = arrayUlSections[i];
         const li = ulSection.getElementsByTagName("li");
         let count = 0;
         for (let j = 0; j < li.length; j++) {
