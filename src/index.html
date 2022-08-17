@@ -8,17 +8,23 @@
   <meta name="description" content="Website where you can find your shortcuts">
   <title>Hayile - Shortcuts</title>
   <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./variables.css">
   <script src="./main.js" defer></script>
+  <script src="./nightmode.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <nav class="topbar">
-    <img class="topbar__logo" src="./assets/img/HAYILE logo.png" alt="Hayile logo" width="100px">
-    <div class="topbar__burger">
-      <img src="./assets/icons/burger.svg" alt="Menu" width="30px">
+    <div class="topbar__container">
+      <img class="topbar__logo" src="./assets/icons/HAYILE.svg" alt="Hayile logo" width="100px">
+      <div class="topbar__burger">
+        <img src="./assets/icons/burger.svg" alt="Menu" width="30px">
+      </div>
+      <button class="theme">
+
+      </button>
     </div>
   </nav>
   <div class="content">
@@ -29,9 +35,12 @@
       </div>
     </main>
     <section class="sidebar">
-      <div class="sidebar__element">
-        <img src="assets/icons/logo vscode.svg" alt="logo visualStudioCode" class="sidebar__box--logo">
-      </div>
+      <ul>
+        <h2>Shortcuts</h2>
+        <div class="button">
+          <a href="#">VSCode</a>
+        </div>
+      </ul>
     </section>
     <section class="shortcuts">
       <div class="shortcuts__container">
